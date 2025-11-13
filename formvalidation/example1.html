@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <label>Email</label>
+        <input type="text" id="email">
+        <br><br>
+
+        <label>Password</label>
+        <input type="password" id="password">
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <p id="error-msg" style="color: red;"></p>
+    <script>
+        let myForm = document.getElementById("myForm");
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+        let errorMsg = document.getElementById("error-msg");
+
+        myForm.addEventListener("submit", (e) => {
+            // Step 1: Assume everything is valid initially
+            let isValid = true;
+            errorMsg.textContent = "";
+
+            // Step 2: Check empty fields
+            if(email.value.trim() === "" || password.value.trim() === "") {
+                errorMsg.textContent = "Please fill in all the required details";
+                isValid = false;
+            }
+
+            // Step 3: Check for '@' and '.' in email (very basic check)
+            else if(!email.value.includes("@") || !email.value.includes(".")) {
+                errorMsg.textContent = "You entered invalid email!"
+                isValid = false;
+            }
+
+            // Step 4: Check password length
+            else if(password.value.length < 6) {
+                errorMsg.textContent = "Password length must be at least 6!";
+                isValid = false;
+            }
+
+            // Step 5: Stop form submission if any rule failed
+            if(isValid) {
+                alert("Form submitted successfully!")
+            } else {
+                e.preventDefault();
+            }
+        })
+    </script>
+</body>
+
+</html>

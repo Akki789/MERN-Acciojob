@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball</title>
+    <style>
+        .ball{
+            border-radius: 50%;
+            background-color: red;
+            position: relative;
+            height: 100px;
+            width: 100px;
+            animation-name: ball;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            animation-direction: alternate;
+        }
+
+        @keyframes ball{
+            from{ 
+                top: 0;
+            }
+
+            to{
+                top:150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+</body>
+</html>

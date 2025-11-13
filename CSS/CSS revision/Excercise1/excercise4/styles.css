@@ -1,0 +1,151 @@
+/* === Reset & Base === */
+/* TODO: Universal reset for margin, padding, and set box-sizing */
+* {
+  /* your code */
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* TODO: Body base
+   - Set a clean font, text color, background
+   - Line-height for readability */
+body {
+  /* your code */
+  
+}
+
+/* === Layout Wrappers === */
+/* TODO: .container
+   - max-width (e.g., 1100px)
+   - center with margin
+   - horizontal padding */
+.container {
+  /* your code */
+}
+
+/* TODO: #site-header
+   - vertical spacing
+   - center text */
+#site-header {
+  /* your code */
+}
+
+.page-title {
+  /* TODO: bottom margin */
+}
+
+.page-subtitle {
+  /* TODO: muted color and small bottom margin */
+}
+
+/* === Card Grid (no flex/grid) === */
+/* Use inline-block for columns and manage horizontal gaps with margins */
+.cards {
+  /* TODO: top spacing from header */
+}
+
+/* TODO: .card
+   - display: inline-block
+   - width (e.g., 31% to allow 3 per row with margins)
+   - vertical-align: top
+   - background-color: #fff
+   - border, border-radius
+   - margin (to create gaps)
+   - overflow: hidden (to clip image corners) */
+.card {
+  /* your code */
+}
+
+/* === Card Parts === */
+/* TODO: .card-img
+   - display: block
+   - width: 100%
+   - height: auto */
+.card-img {
+  /* your code */
+}
+
+/* TODO: .card-body
+   - padding
+   - manage spacing to next block */
+.card-body {
+  /* your code */
+}
+
+/* TODO: .card-title
+   - font-size
+   - margin-bottom */
+.card-title {
+  /* your code */
+}
+
+/* TODO: .card-desc
+   - color (slightly muted)
+   - margin-bottom */
+.card-desc {
+  /* your code */
+}
+
+/* TODO: .meta
+   - spacing top/bottom inside card-body */
+.meta {
+  /* your code */
+}
+
+/* TODO: .price
+   - stronger weight or color emphasis */
+.price {
+  /* your code */
+}
+
+/* TODO: .badge
+   - optional: small inline box with padding, border, and rounded corners */
+.badge {
+  /* your code */
+}
+
+/* TODO: .card-actions
+   - padding
+   - border-top to separate from body */
+.card-actions {
+  /* your code */
+}
+
+/* TODO: .btn
+   - display: block or inline-block
+   - padding
+   - border
+   - background-color
+   - color
+   - border-radius
+   - cursor: pointer */
+.btn {
+  /* your code */
+}
+
+/* === Footer === */
+/* TODO: #site-footer
+   - top margin
+   - background-color (soft)
+   - centered text
+   - padding
+   - border-radius (optional) */
+#site-footer {
+  /* your code */
+}
+
+.footer-text {
+  /* your code */
+}
+
+.footer-link {
+  /* your code */
+}
+
+/* === Grouping Selector Example === */
+/* TODO: Share small letter-spacing across titles and footer-text */
+.card-title,
+.footer-text {
+  /* your code */
+}

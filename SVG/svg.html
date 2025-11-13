@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SVG Stage 1 — Basics</title>
+  <style>
+    /* Optional: just to center the demo visually */
+    body { display: grid; place-items: center; min-height: 100vh; font-family: sans-serif; }
+  </style>
+</head>
+<body>
+
+  <!--
+    SVG BASICS
+    - <svg> creates a drawing area inside your HTML page.
+    - width/height: output size on the page (in CSS pixels by default).
+    - xmlns: SVG namespace (required for proper SVG parsing in HTML).
+  -->
+  <svg
+    width="320"             
+    height="220"             
+    xmlns="http://www.w3.org/2000/svg"
+    style="border: 2px solid black"
+  >
+
+    <!-- =======================
+         1) RECTANGLE (<rect>)
+         =======================
+         Key attributes:
+         - x, y: top-left corner position of the rectangle (in pixels). (20, 20)
+         - width, height: size of the rectangle. (120, 60)
+         - fill: interior color of the shape.
+         - stroke: outline (border) color.
+         - stroke-width: thickness of the outline. (2)
+    -->
+         <rect x="20" y="20" width="120" height="60" fill="lightblue" stroke="black" stroke-width="2" />
+
+
+    <!-- ===================
+         2) CIRCLE (<circle>)
+         ===================
+         Key attributes:
+         - cx, cy: center coordinates of the circle. (220, 50)
+         - r: radius (half the diameter). (30)
+         - fill: interior color. 
+         - stroke: outline color.
+         - stroke-width: outline thickness. (2)
+    -->
+
+    <circle cx="220" cy="50" r="30" fill="lightgreen" stroke="black" stroke-width="2" />
+    
+
+    <!-- ===============
+         3) LINE (<line>)
+         ===============
+         Key attributes:
+         - x1, y1: starting point of the line. (20, 140)
+         - x2, y2: ending point of the line. (300, 180)
+         - stroke: line color (required, since a line has no fill).
+         - stroke-width: thickness of the line. (3)
+    -->
+
+    <line x1="20" y1="140" x2="300" y2="180" stroke="red" stroke-width="3" />
+    
+
+    <!--
+      BONUS: A tiny label to show text rendering inside SVG.
+      
+      Attributes:
+      - x, y: baseline start position of the text.
+      - fill: text color (works like font color).
+      - font-size: size of the text.
+    -->
+    <text x="20" y="105" fill="black" font-size="14">Rectangle</text>
+    <text x="200" y="105" fill="black" font-size="14">Circle</text>
+    <text x="20" y="195" fill="black" font-size="14">Line</text>
+
+  </svg>
+
+  <!--
+    QUICK RECAP:
+    - SVG uses a Cartesian-like grid with (0,0) at the top-left.
+    - Units default to pixels unless specified.
+    - For basics, focus on: rect(x,y,width,height), circle(cx,cy,r), line(x1,y1,x2,y2),
+      plus fill, stroke, stroke-width to color and outline shapes.
+  -->
+
+</body>
+</html>

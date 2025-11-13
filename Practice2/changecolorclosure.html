@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #item{
+            height: 150px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="blue">Blue</button>
+    <button id="green">Green</button>
+
+    <div id="item"></div>
+
+    <script>
+        let orange = document.getElementById("orange");
+        let blue = document.getElementById("blue");
+        let green = document.getElementById("green");
+        let item = document.getElementById("item");
+
+        function changeColor(color){
+            return function(){
+                item.style.backgroundColor = color
+            }
+        }
+
+       orange.addEventListener('click', changeColor("orange"));
+       blue.addEventListener('click', changeColor("blue"));
+       green.addEventListener('click', changeColor("green"));
+
+    </script>
+</body>
+</html>

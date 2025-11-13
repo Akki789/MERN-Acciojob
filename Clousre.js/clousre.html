@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #item {
+            height: 150px;
+            width: 300px;
+            border: 2px solid black;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="greenyellow">Greenyellow</button>
+    <div id="item"></div>
+
+    <script>
+        let orange = document.getElementById("orange");
+        let greenyellow = document.getElementById("greenyellow");
+        let item = document.getElementById("item");
+
+        // orange.addEventListener("click", () => {
+        //     item.style.backgroundColor = "orange";
+        // })
+
+        // greenyellow.addEventListener("click", () => {
+        //     item.style.backgroundColor = "greenyellow";
+        // })
+
+
+        function color(color){
+            
+
+            return function(){
+                item.style.backgroundColor = color;
+            }
+        }
+
+        orange.addEventListener("click", color("orange"));
+        greenyellow.addEventListener("click", color("greenyellow"));
+    </script>
+</body>
+</html>

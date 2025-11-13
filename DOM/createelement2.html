@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            color: red;
+        }
+
+        .newClass{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <!--give new class without overwrite existing class-->
+    <p class="content">Hi, I am Akash Kumar</p>
+
+    <script>
+        let para = document.querySelector("p");
+
+        console.log(para);
+
+        para.classList.add("newClass")
+    </script>
+</body>
+</html>

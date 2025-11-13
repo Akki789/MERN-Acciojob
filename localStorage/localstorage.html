@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <p>Hello there</p>
+    <input type="text" placeholder="Enter your name" class="name">
+    <input type="email" placeholder="Enter your mail" class="mail">
+    <!-- <button class="btn">Submit</button> -->
+
+    <script>
+        let name = "Akash";
+
+        let myName = document.querySelector(".name");
+        let mail = document.querySelector(".mail");
+        // let btn = document.querySelector(".btn");
+
+
+        // localStorage.setItem('myName', 'Akash Kumar');
+        // localStorage.setItem('mail', 'aakashkumar@gmail.com');
+
+        // localStorage.getItem('myname');
+        // localStorage.getItem('mail');
+
+        // btn.addEventListener('click', () => {
+        //     localStorage.setItem('myName', myName.value);
+        //     localStorage.setItem('Email', mail.value);
+        // });
+
+        // myName.addEventListener("input", (e) => {
+        //     localStorage.setItem("myName", e.target.value);
+        // });
+
+        // mail.addEventListener("input", (e) => {
+        //     localStorage.setItem("Email", e.target.value);
+        // });
+
+        // let myData = {
+        //     myName:"Akash",
+        //     Email:"akash@gmail.com"
+        // }
+
+         let myData = {
+            myName:"",
+            Email:""
+        }
+
+        myName.addEventListener("input", (e) => {
+            myData.myName = e.target.value;
+            localStorage.setItem("myData", JSON.stringify(myData));
+        });
+
+        mail.addEventListener("input", (e) => {
+            myData.Email = e.target.value;
+            localStorage.setItem("myData", JSON.stringify(myData));
+        });
+       
+        localStorage.setItem("myData", JSON.stringify(myData));
+
+    </script>
+</body>
+</html>

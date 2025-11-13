@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SVG Star</title>
+  <style>
+    svg {
+      width: 150px;
+      height: 150px;
+    }
+    polygon {
+      fill: gold;               /* star fill color */
+      stroke: black;             /* border color */
+      stroke-width: 2;            /* border thickness */
+      stroke-linejoin: round;     /* smooth corners */
+    }
+    polygon:hover {
+      fill: orange;               /* hover effect */
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <svg>
+    <polygon
+      points="
+        50,15  
+        61,35
+        82,35
+        66,50
+        72,71
+        50,60   
+        28,71
+        34,50
+        18,35
+        39,35
+      "
+    />
+  </svg>
+
+</body>
+</html>

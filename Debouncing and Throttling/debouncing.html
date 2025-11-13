@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter your name" id="name">
+
+    <script>
+        let name = document.getElementById("name");
+
+
+        // // approach 1 (without debouncing)
+        // name.addEventListener('input', (e)=>{
+        //     console.log(e.target.value);
+        // })
+
+        // approach 2 (with debouncing)
+        // let timer;
+        // name.addEventListener('input', ()=>{
+        //     clearTimeout(timer);
+        //     timer = setTimeout(()=>{
+        //         console.log(name.value);
+        //     }, 500)
+        // })
+
+        // approach 3 (with debouncing with generic function)
+
+        function debounce(func, delay){
+            let timer;
+            return function(...args){
+                clearTimeout(timer);
+                timer = setTimeout(()=>{
+                    func(...args);
+                }, delay)
+            }
+        }
+
+        function handleSearch(value){
+          console.log(value);
+        };
+
+        let debouncedSearch = debounce(handleSearch, 500);
+
+        name.addEventListener('input', (e)=>{
+            debouncedSearch(e.target.value)
+        })
+
+        
+    </script>
+</body>
+</html>

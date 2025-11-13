@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Post</title>
+  </head>
+  <body>
+    <input type="text" id="title" placeholder="Title" />
+    <textarea id="body" placeholder="Write your post here..."></textarea>
+    <button id="submit">Submit</button>
+    <p id="errmsg" style="color: red;"></p>
+
+    <script>
+      document.getElementById("submit").addEventListener("click", () => {
+        let title = document.getElementById("title").value.trim();
+        let body = document.getElementById("body").value.trim();
+        let err = document.getElementById("errmsg");
+
+        err.textContent = ""
+        if (!title || !body) {
+          err.textContent = `Title and Body are requried `;
+        //   alert("Title and Body are requried");
+          return;
+        }
+
+        const newPost = {
+          title: title,
+          body: body,
+          userId: 1,
+        };
+
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newPost),
+        })
+          .then((res) => {
+            if (!res.ok) throw new Error("Response was not ok");
+            return res.json();
+          })
+          .then((data) => {
+            alert(`Post created with id: ${data.id}`);
+          })
+          .catch((err) => {
+            console.error(err);
+            err.textContent = `Server Error : ${status} `;
+            alert("Network error");
+          });
+      });
+    </script>
+  </body>
+</html>

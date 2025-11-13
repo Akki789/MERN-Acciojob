@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            height: 200vh;
+        }
+
+        .container {
+            position: fixed;
+        }
+
+        div {
+            font-size: 5rem;
+        }
+    </style>
+</head>
+
+<body onscroll="scrollHandler()">
+    <div class="container">
+        <div id="n-count">Normal Count</div>
+        <div id="t-count">Throttle Count</div>
+        <div id="d-count">Debounce Count</div>
+    </div>
+
+    <script>
+        const normalDiv = document.getElementById("n-count");
+        const throttleDiv = document.getElementById("t-count");
+        const debounceDiv = document.getElementById("d-count");
+
+        let nC = 0;
+        let tC = 0;
+        let dC = 0;
+
+        let isScrolling = true;
+
+        const normalCount = () => {
+            nC++;
+            normalDiv.textContent = `Normal Count: ${nC}`;
+        };
+
+        function throttleCount() {
+            if (isScrolling) {
+                tC++;
+                throttleDiv.textContent = `Throttle Count: ${tC}`;
+                isScrolling = false;
+                setTimeout(() => {
+                    isScrolling = true;
+                }, 1000)
+            }
+        }
+
+        let interval;
+
+        function debounceCount() {
+            clearTimeout(interval);
+
+            interval = setTimeout(() => {
+                dC++;
+                debounceDiv.textContent = `Debounce Count: ${dC}`
+            }, 1000)
+        }
+
+        const scrollHandler = () => {
+            normalCount();
+            throttleCount();
+            debounceCount();
+        };
+    </script>
+</body>
+
+</html>

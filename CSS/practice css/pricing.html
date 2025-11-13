@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Assignment 1 - Pricing Flex</title>
+<style>
+  
+  .pricing {
+    display: flex;
+    flex-wrap: wrap;            /* allow wrapping */
+    gap: 16px;                  /* spacing between cards */
+    padding: 16px;              /* outer padding */
+    background: #f6f8fb;        /* subtle section styling */
+    border: 1px solid #e6ebf2;
+  }
+
+  .card {
+    display: flex;              /* inner column layout */
+    flex-direction: column;
+    flex: 1 1 280px;            /* default flexible card */
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  }
+
+  .card h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+  }
+  .price {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .features {
+    display: flex;              /* vertical stack with gap */
+    flex-direction: column;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+  }
+
+  .fill { flex: 1; }           /* pushes the button to the bottom */
+
+  .card button {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #0b74e5;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* grow ratios: 1 : 2 : 1 */
+  .starter    { flex: 1 1 280px; }
+  .pro        { flex: 2 1 320px; }  /* wider middle card */
+  .enterprise { flex: 1 1 280px; }
+</style>
+
+</head>
+<body>
+
+<section class="pricing">
+  <article class="card starter">
+    <h3>Starter</h3>
+    <div class="price">₹499/mo</div>
+    <ul class="features">
+      <li>Basic Support</li>
+      <li>5 Projects</li>
+      <li>1 Team Member</li>
+    </ul>
+    <div class="fill"></div>
+    <button>Choose Starter</button>
+  </article>
+
+  <article class="card pro">
+    <h3>Pro</h3>
+    <div class="price">₹999/mo</div>
+    <ul class="features">
+      <li>Priority Support</li>
+      <li>20 Projects</li>
+      <li>5 Team Members</li>
+      <li>Advanced Analytics</li>
+    </ul>
+    <div class="fill"></div>
+    <button>Choose Pro</button>
+  </article>
+
+  <article class="card enterprise">
+    <h3>Enterprise</h3>
+    <div class="price">₹2499/mo</div>
+    <ul class="features">
+      <li>24x7 Dedicated Support</li>
+      <li>Unlimited Projects</li>
+      <li>Unlimited Team</li>
+      <li>Custom Integrations</li>
+      <li>SLA & Security</li>
+    </ul>
+    <div class="fill"></div>
+    <button>Contact Sales</button>
+  </article>
+</section>
+
+</body>
+</html>

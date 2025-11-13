@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            height: 500px;
+            width: 500px;
+            background-color: lightseagreen;
+            border: 3px solid yellow;
+        }
+
+        #child{
+            height: 250px;
+            width: 250px;
+            border: 3px solid yellow;
+            background-color: lightpink;
+        }
+
+        #innerChild{
+            height: 100px;
+            width: 100px;
+            border: 3px solid yellow;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="child">
+            <div id="innerChild">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let parent = document.getElementById("parent");
+        let child = document.getElementById("child");
+        let innerChild = document.getElementById("innerChild");
+
+
+        document.body.addEventListener('click',() =>{
+            console.log('body Clicked');
+        });
+
+        parent.addEventListener('click',()=>{
+            console.log('parent Clicked');
+        });
+
+        child.addEventListener('click',()=>{
+            console.log('child clicked');
+        });
+
+        innerChild.addEventListener('click',()=>{
+            console.log('inner Child Clicked');
+        });
+    </script>
+</body>
+</html>

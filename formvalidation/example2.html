@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="submit" id="myForm">
+
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter your name" id="name"> <br>
+
+        <label for="email">Email</label>
+        <input type="text" placeholder="Enter your Email" id="email"><br>
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter your Password" id="pass"><br>
+
+        <label for="password">Confirm Password</label>
+        <input type="password" placeholder="Enter your Password" id="cpass"><br>
+
+        <label for="age">Age</label>
+        <input type="number" placeholder="Enter your Age" id="age"><br>
+
+        <label for="">Country</label>
+        <select name="country" id="country">
+            <option value="">--Select--</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+        </select> <br>
+
+        <label for="terms">Terms and Condition</label>
+        <input type="checkbox" id="terms">
+        
+
+        <input type="submit" value="Submit" id="submit">
+
+        <p id="err" style="color:red"></p>
+
+    </form>
+
+
+    <script>
+        let form = document.getElementById("myForm");
+        let name = document.getElementById("name");
+        let email = document.getElementById("email");
+        let age = document.getElementById("age");
+        let country = document.getElementById("country")
+        let password = document.getElementById("pass");
+        let cpassword = document.getElementById("cpass");
+        let terms = document.getElementById("terms")
+        let err = document.getElementById("err")
+
+
+        form.addEventListener('submit', (e) =>{
+            let isValid = true;
+            err.textContent = ""
+        // 1️⃣ Empty check for all important fields
+        if(name.value.trim() == "" || email.value.trim() == "" || age.value.length == 0 ||  country.value.trim() =="" || password.value.length == 0 || age.value.trim() ==""){
+            err.textContent = "Fill All the details"
+            isValid = false;
+        }
+        // 2️⃣ Basic email check
+        if(!email.value.includes("@") || !email.value.includes(".")){
+            err.textContent = "Plz Enter Valid email"
+            isValid = false;
+        }
+        // 3️⃣ Password match check
+
+        if(password.value.trim() !== cpassword.value.trim()){
+            err.textContent = "password should be matched "
+            isValid = false;
+        }
+        // 4️⃣ Password strength check (without regex)
+
+        if(password.value.length <6){
+            err.textContent = "Password Should be at least 6"
+            isValid = false;
+        }
+        // 5️⃣ Age check
+
+        if(age.value < 18){
+            err.textContent = "Age should be more than 18"
+            isValid = false;
+        }
+        // 6️⃣ Dropdown (Country) check
+
+        if(country.value == ""){
+            err.textContent = "Select The Country"
+            isValid = false;
+        }
+        // 7️⃣ Checkbox (Terms)
+         if(!terms.checked){
+            err.textContent = "Agree to terms and Conditions"
+            isValid = false;
+         }
+
+        if(isValid) {
+                alert("Form submitted successfully!")
+            } else {
+                e.preventDefault();
+            }
+
+        });
+    </script>
+</body>
+</html>

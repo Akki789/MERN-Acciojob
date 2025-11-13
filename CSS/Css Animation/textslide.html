@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Slide</title>
+    <style>
+        .banner{
+            border: 5px solid black;
+            height: 80px;
+           overflow: hidden;
+        }
+
+        .text{
+            width: 100%;
+            animation-name: slide;
+            animation-iteration-count: infinite;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+        }
+
+        @keyframes slide{
+            from{
+                margin-left: 100%;
+            }
+
+            to{
+                margin-left: 0%;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="text">Welcome to My Website</div>
+    </div>
+</body>
+</html>

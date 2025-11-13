@@ -1,0 +1,35 @@
+id vs class
+--------------
+id:
+1. One id can be given to only one element
+2. one element can haver only one id
+
+class:
+1. One class can be given to multiple elements
+2. One element can have multiple classes
+
+selectors
+-----------
+1. tag/element selector: selects all elements with the same name
+2. id selector: selects only pericular id given element(#)
+3. class selector: selects perticular class only(.)
+4. universal(*) selector: whole page(*)
+5. grouping selector: selects all the elemnts which you mentioned
+
+display
+-------------
+1. Inline:
+        - takes width according to its content
+        - next elem in same line
+        - height and width has no effect
+
+2. block:
+        - takes 100% width
+        - next elem in new line
+        - we can set height and width
+        
+3. inline-block:
+        - we can set height and width
+        - next elem in same line
+
+4. none:

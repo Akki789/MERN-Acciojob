@@ -1,0 +1,44 @@
+
+
+<!-- throttling -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body style="height: 2000px;">
+    <h2>Scroll Event and Function Call</h2>
+
+    <script>
+        // approach - 1
+        // window.addEventListener("scroll", () => {
+        //     console.log("Scroll:", new Date().toLocaleTimeString());
+        // })
+
+
+        // approach - 2
+        function throttle(func, limit) {
+            let inThrottle = false;
+            return function(...args) {
+                if(!inThrottle) {
+                    func(...args);
+                    inThrottle = true;
+                    setTimeout(() => {
+                        inThrottle = false;
+                    }, limit)
+                }
+            }
+        }
+
+        function logScroll() {
+            console.log("Scroll:", new Date().toLocaleTimeString());
+        }
+
+        let throttledScroll = throttle(logScroll, 1000);
+
+        window.addEventListener("scroll", throttledScroll);
+    </script>
+ </body>
+ </html>

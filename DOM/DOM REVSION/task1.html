@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DOM Practice</title>
+  <style>
+    .title { font-weight: 700; }
+    .box   { padding: 8px; border: 1px solid #ddd; margin: 6px 0; }
+    .blue  { background:#e6f0ff; }
+    .red   { background:#ffe6e6; }
+    .hidden{ display:none; }
+    .rounded { border-radius: 8px; }
+    .highlight{ outline: 2px dashed orange; }
+  </style>
+</head>
+<body>
+  <div id="main" class="box blue">
+    <h1 class="title">Welcome</h1>
+    <p id="info">This is a paragraph.</p>
+    <button id="action">Click me</button>
+  </div>
+
+  <div id="playground" class="box">
+    <h2>Playground</h2>
+    <ul id="list">
+      <li class="item">Alpha</li>
+      <li class="item">Beta</li>
+    </ul>
+    <div id="output"></div>
+  </div>
+
+  <!-- Your scripts go here -->
+  <script>
+    // write code per task below
+    // Select the #main div using getElementById
+const mainDiv = document.getElementById("main");
+console.log("mainDiv:", mainDiv);
+
+// Select the .title element using getElementsByClassName
+const titleElement = document.getElementsByClassName("title")[0];
+console.log("titleElement:", titleElement.textContent);
+
+// Select all <p> tags using getElementsByTagName
+const allParagraphs = document.getElementsByTagName("p");
+console.log("All <p> tags:");
+for (let p of allParagraphs) {
+  console.log("-", p.textContent);
+}
+
+// Select the first .item using querySelector
+const firstItem = document.querySelector(".item");
+console.log("First .item:", firstItem.textContent);
+
+// Select all .item elements using querySelectorAll
+const allItems = document.querySelectorAll(".item");
+console.log("All .item elements:");
+allItems.forEach((item, index) => {
+  console.log(`${index + 1}:`, item.textContent);
+});
+
+  </script>
+</body>
+</html>

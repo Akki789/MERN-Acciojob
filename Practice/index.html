@@ -1,0 +1,57 @@
+ <!-- Goal:
+ Students will write JavaScript to filter images using category buttons (All / Nature / City / Food).
+ Requirements:- Clicking a button shows only images matching that category.- "All" must show all images again.- Highlight active button (class: active).- Use DOM manipulation. No page reload.
+ Students will ONLY write JavaScript (script.js).
+ HTML & CSS are already provided. -->
+
+  <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Gallery Filter</title>
+  <link rel="stylesheet" href="style.css" />
+ </head>
+ <body>
+  <header class="container">
+    <h1>Image Gallery</h1>
+    <p>Click a category to filter the gallery.</p>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="city">City</button>
+      <button class="filter-btn" data-filter="food">Food</button>
+    </div>
+  </header>
+  <main class="container">
+    <section id="gallery" class="grid">
+      <figure class="card" data-category="nature">
+        <img src="https://picsum.photos/seed/n1/400/260" alt="Nature 1">
+        <figcaption>Nature 1</figcaption>
+      </figure>
+      <figure class="card" data-category="nature">
+        <img src="https://picsum.photos/seed/n2/400/260" alt="Nature 2">
+        <figcaption>Nature 2</figcaption>
+      </figure>
+      <figure class="card" data-category="city">
+        <img src="https://picsum.photos/seed/c1/400/260" alt="City 1">
+        <figcaption>City 1</figcaption>
+      </figure>
+      <figure class="card" data-category="city">
+        <img src="https://picsum.photos/seed/c2/400/260" alt="City 2">
+        <figcaption>City 2</figcaption>
+      </figure>
+      <figure class="card" data-category="food">
+        <img src="https://picsum.photos/seed/f1/400/260" alt="Food 1">
+        <figcaption>Food 1</figcaption>
+      </figure>
+      <figure class="card" data-category="food">
+        <img src="https://picsum.photos/seed/f2/400/260" alt="Food 2">
+        <figcaption>Food 2</figcaption>
+      </figure>
+    </section>
+  </main>
+  <!-- Students will write JS logic here -->
+  <script src="app.js"></script>
+ </body>
+ </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="show-btn">Show Newsletter</button>
+    <button id="close-btn">Close</button>
+    <div id="msg"></div>
+
+
+    <script>
+        let msg = document.getElementById("msg");
+
+        let show = document.getElementById("show-btn");
+
+        let close = document.getElementById("close-btn");
+
+        let messege = document.createElement("p");
+
+        messege.innerText = "Subscribe to our Newsletter";
+
+        show.addEventListener('click', ()=>{
+            msg.appendChild(messege);
+        });
+
+        close.addEventListener('click',()=>{
+            if(messege){
+                msg.removeChild(messege);
+            }
+        });
+    </script>
+  </body>
+</html>

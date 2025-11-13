@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .active-tab {
+        font-weight: bold;
+        color: royalblue;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="navbar">
+      <li id="home-tab">Home</li>
+      <li>About</li>
+      <li>Projects</li>
+      <li>Contact</li>
+    </ul>
+
+    <script>
+      let home = document.getElementById("home-tab");
+
+      home.classList.add("active-tab");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--Add unique text in each div-->
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+
+    <script>
+        let content = document.querySelectorAll(".box");
+
+        console.log(content);
+
+        let i =1;
+        for (let div of content){
+            div.innerText = `value ${i}`
+            i++;
+        }
+    </script>
+</body>
+</html>

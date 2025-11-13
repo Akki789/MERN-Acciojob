@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form with Form Events</h1>
+
+    <form id="simpleForm">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+        <span id="nameError" class="error"></span>
+        <br><br>
+
+        <label for="color">Favorite Color</label>
+        <select name="color" id="color">
+            <option value="">--Select--</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Submit</button>
+
+        <script>
+            let simpleForm = document.getElementById("simpleForm");
+            let nameInput = document.getElementById("name");
+            let colorSelect = document.getElementById("color");
+            let nameError = document.getElementById("nameError");
+
+            // focus event on name input
+            nameInput.addEventListener("focus", () => {
+                nameError.textContent = "";
+            });
+
+            // blur event on name input
+            nameInput.addEventListener("blur", () => {
+                if(nameInput.value.trim() === "") {
+                    nameError.textContent = "Name is required!";
+                }
+            });
+
+            // input event on name input
+            nameInput.addEventListener("input", () => {
+                console.log("user is typing: ", nameInput.value);
+            });
+
+            // change event on color select
+            colorSelect.addEventListener("change", () => {
+                console.log("Color selected: ", colorSelect.value);
+            })
+
+            // submit event on form
+            simpleForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                // check if the name field is empty
+                if(nameInput.value.trim() === "") {
+                    nameError.textContent = "Name is required";
+                    return;
+                }
+
+                console.log("Form submitted!");
+                console.log(nameInput.value);
+                console.log(colorSelect.value)
+            })
+            
+        </script>
+
+
+    </form>
+</body>
+</html>
+
+
+<!-- 
+    input
+    textarea
+    select
+    button
+
+    common form events
+        submit
+        input
+        change
+        focus
+        blur
+-->
+

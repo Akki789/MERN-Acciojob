@@ -1,0 +1,36 @@
+<!-- ### **🔟 (DOM Task)** Closure inside Event Handler
+
+👉 Use a closure so each list item alerts its own name when clicked. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu"></ul>
+
+    <script>
+        let id = document.getElementById("menu");
+        let items = ["Home", "About", "Contact"];
+
+        items.forEach((elem)=>{
+            let li  = document.createElement("li");
+            li.textContent = elem;
+
+            li.addEventListener('click', ()=>{
+                alert(elem)
+            })
+
+            id.appendChild(li)
+        })
+    </script>
+</body>
+</html>

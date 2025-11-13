@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ Section</title>
+  <style>
+    .answer {
+      display: none; /* Hide answers by default */
+      color: gray;
+      margin-left: 20px;
+    }
+    .question {
+      cursor: pointer; /* Indicate clickable element */
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+#faq {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.question {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 12px;
+  margin: 5px 0;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.question::after {
+  content: "+";
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.question.active {
+  color: #0077cc;
+}
+
+.question.active::after {
+  content: "-";
+  transform: rotate(180deg);
+}
+
+.answer {
+  display: none;
+  color: #555;
+  margin: 0 0 10px 0;
+  padding: 0 12px 12px;
+  border-left: 3px solid #0077cc;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div id="faq">
+    <div>
+      <div class="question">What is JavaScript?</div>
+      <div class="answer">JavaScript is a programming language for the web.</div>
+    </div>
+    <div>
+      <div class="question">What is the DOM?</div>
+      <div class="answer">The DOM is the Document Object Model of a webpage.</div>
+    </div>
+    <div>
+      <div class="question">What is an event listener?</div>
+      <div class="answer">An event listener listens for and reacts to user interactions.</div>
+    </div>
+  </div>
+
+  <script>
+         let questions=document.querySelectorAll(".question");
+         
+
+         questions.forEach((question)=>{
+                question.addEventListener('click',()=>{
+                    let answer = question.nextElementSibling;
+                    answer.style.display = answer.style.display === "block" ? "none" : "block"
+                });
+         });
+
+
+  </script>
+</body>
+</html>

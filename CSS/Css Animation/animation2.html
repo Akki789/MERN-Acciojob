@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: dodgerblue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+
+            /* Animation applied */
+            animation-name: moveBox;
+            animation-duration: 3s;
+        }
+
+        @keyframes moveBox {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(200px);
+            }
+        }
+
+        @keyframes moveBox {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(200px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style> -->
+
+    <!-- <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            
+            /* infinite repeat */
+            animation-name: moveBox;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes moveBox {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(200px);
+            }
+        }
+    </style> -->
+
+    <!-- <style>
+        .ball {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: dodgerblue;
+
+            animation-name: bounce;
+            animation-duration: 3s;
+            animation-direction: reverse;
+            
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(200px);
+            }
+        }
+    </style> -->
+
+    <!-- <style>
+        .box {
+            width: 120px;
+            height: 120px;
+            background: teal;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            animation-name: slide;
+            animation-duration: 3s;
+            animation-delay: 2s;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(200px);
+            }
+        }
+    </style> -->
+
+    <!-- <style>
+        .hold-box {
+            width: 120px;
+            height: 120px;
+            background: blue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            animation-name: grow;
+            animation-duration: 3s;
+            animation-delay: 3s;
+            animation-fill-mode: backwards;
+            
+
+            
+        }
+
+        @keyframes grow {
+            from {
+                transform: scale(1);
+                background: orange;
+            }
+
+            to {
+                transform: scale(1.5);
+                background: red;
+            }
+        }
+    </style> -->
+
+    <style>
+        .box {
+            width: 100px;
+            height: 40px;
+            margin: 10px;
+            background: dodgerblue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            animation: move 3s infinite;
+        }
+
+        .linear {
+            animation-timing-function: linear;
+        }
+
+        .ease {
+            animation-timing-function: ease;
+        }
+
+        .ease-in {
+            animation-timing-function: ease-in;
+        }
+
+        .ease-out {
+            animation-timing-function: ease-out;
+        }
+
+        .ease-in-out {
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(300px);
+            }
+        }
+    </style>
+</head>
+<body>
+       <!-- animation-name and animation-duration -->
+    <!-- <div class="box">Animate Me</div> -->
+
+    <!-- animation-iteration-count -->
+    <!-- <div class="box">Loop</div> -->
+
+    <!-- animation-direction -->
+    <!-- <div class="ball"></div> -->
+
+    <!-- animation-delay -->
+    <!-- <div class="box">Wait 2s</div> -->
+
+    <!-- animation-fill-mode -->
+    <!-- <div class="hold-box">Final Hold</div> -->
+
+    <!-- animation-timing-function -->
+    <div class="box linear">Linear</div>
+    <div class="box ease">Ease</div>
+    <div class="box ease-in">Ease-In</div>
+    <div class="box ease-out">Ease-Out</div>
+    <div class="box ease-in-out">Ease-In-Out</div>
+</body>
+</html>

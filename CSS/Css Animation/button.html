@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <style>
+        .btn{
+            border-radius: 5px;
+            background-color: green;
+            color: white;
+            padding: 12px 24px; 
+            border-style: none;    
+
+            animation-name: button;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            
+        }
+
+        @keyframes button{
+           0%{
+            transform: scale(1);
+           }
+
+           50%{
+            transform: scale(1.1);
+           }
+
+          
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">Click me</button>
+</body>
+</html>
