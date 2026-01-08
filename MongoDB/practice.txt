@@ -1,0 +1,146 @@
+3. creating collection and adding document
+
+db.users.insertOne({
+    name: "Akash Kumar",
+    email: "akash@gmail.com",
+    age: 22,
+    isActive: true
+})
+
+4. creating collection
+
+db.createCollection("users")
+
+5. show collections
+6. read data:-
+db.users.find()
+
+7. current working db:- db
+8. adding multiple documents
+db.users.insertMany([
+    {    
+        name: "Saurabh Kumar",
+        email: "Saurabh@gmail.com",
+        age: 25,
+        isActive: true
+    },
+
+    {
+        name: "Vedant Kumar",
+        email: "vedant@gmail.com",
+        age: 24,
+        isActive: true
+    },
+    {
+        name: "Ronaldo Kumar",
+        email: "ronaldo@gmail.com",
+        age: 40,
+        isActive: false
+    }
+])
+
+9. delete a collection:
+db.users.drop()
+
+10. 
+
+db.products.insertOne({
+    name: "iphone 15",
+    category: "Mobile",
+    price: 80000,
+    stock: 50,
+    isActive: true
+})
+
+db.products.insertMany([
+    {    
+        name: "Samsung s23",
+        category: "Mobile",
+        price: 70000,
+        stock: 30,
+        isActive: true
+    },
+
+    {
+       name: "MacBook Air",
+        category: "Laptop",
+        price: 70000,
+        stock: 30,
+        isActive: true
+    },
+    {
+       name: "Dell",
+        category: "Laptop",
+        price: 60000,
+        stock: 30,
+        isActive: true
+    }
+])
+
+-- Update one product price
+db.products.updateOne({name: "iphone 15"}, {$set: {price: 75000}})
+
+-- Update many product price
+db.products.updateMany({category: "Laptop"}, {$set: {price: 75000}})
+
+-- increase stock
+db.products.updateOne({name: "Dell"}, {$inc: {stock: 1}})
+
+-- Decrease stock
+db.products.updateOne({name: "Dell"}, {$inc: {stock: -1}})
+
+-- delete one document
+db.products.deleteOne({name: "iphone 15"})
+
+-- delete many document
+db.products.deleteMany({category: "Laptop"})
+
+db.products.find({
+    $and: [
+        {category: "Laptop"},
+        {stock: {$gt: 0}}
+    ]
+})
+
+db.products.find({
+    $or: [
+        {category: "Mobile"},
+        {price: {$gt: 100000}}
+    ]
+})
+
+db.products.find({}, {name: 1, price: 1, _id: 0})
+db.products.find().sort({price: 1})
+
+
+Assignments:- 08/01/2026
+db.employees.find({department: "Engineering"})
+db.employees.find({isActive: true})
+db.employees.find({age: {$gt: 30}})
+
+db.employees.find({location: "Delhi", isActive: true})
+db.inventory.find({price: {$lt: 5000}})
+db.inventory.find({isAvailable: false})
+
+
+db.inventory.find({category: "electronics"}, {itemName: 1, price: 1, _id: 0})
+db.sales.find({status: "COMPLETED"})
+db.sales.find({region: "North"})
+db.sales.find({unitsSold: {$gt: 3}})
+
+db.employees.find({salary: {$gt: 60000}})
+db.employees.find({ age: { $gte: 25, $lte: 35 } })
+db.employees.find({
+    $or: [
+        {department: "HR"},
+        {department: "QA"}
+    ]
+})
+
+db.employees.find({isActive: false}, location: {$in ["Mumbai", "Surat"]})
+
+
+
+
+
+

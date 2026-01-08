@@ -1,0 +1,140 @@
+# MongoDB
+
+- create and use database
+use companyDB
+- show databases
+show dbs
+- creating collection and adding document
+db.users.insertOne({
+name: "Amit Sharma",
+email: "[amit.sharma@gmail.com](mailto:amit.sharma@gmail.com)",
+role: "Developer",
+age: 25,
+isActive: true
+})
+- creating collection
+db.createCollection("users")
+- show collections
+show collections
+- current working db
+db
+- read data
+db.users.find()
+- delete a collection
+db.users.drop();
+- adding multiple documents
+db.users.insertMany([
+{
+name: "Neha Verma",
+email: "[neha@gmail.com](mailto:neha@gmail.com)",
+role: "HR",
+age: 28,
+isActive: true
+},
+{
+name: "Rahul Mehta",
+email: "[rahul@gmail.com](mailto:rahul@gmail.com)",
+role: "Manager",
+age: 35,
+isActive: true
+},
+{
+name: "Pooja Singh",
+email: "[pooja@gmail.com](mailto:pooja@gmail.com)",
+role: "Tester",
+age: 26,
+isActive: false
+}
+])
+- first doc where role is HR
+db.users.findOne({role: "HR"})
+
+use ecommerceDB
+
+db.products.insertOne({
+name: "iPhone 15",
+category: "Mobile",
+price: 80000,
+stock: 50,
+isActive: true
+})
+
+db.products.insertMany([
+{
+name: "Samsung S23",
+category: "Mobile",
+price: 70000,
+stock: 30,
+isActive: true
+},
+{
+name: "MacBook Air",
+category: "Laptop",
+price: 120000,
+stock: 10,
+isActive: true
+},
+{
+name: "Dell Inspiron",
+category: "Laptop",
+price: 60000,
+stock: 0,
+isActive: false
+}
+])
+
+db.products.find()
+
+db.products.findOne({category: "Laptop"})
+
+db.products.find({category: "Laptop"})
+
+- Update ONE Product Price
+db.products.updateOne({name: "iPhone 15"}, {$set: {price: 75000}})
+- update many
+db.products.updateMany({category: "Mobile"}, {$set: {price: 60000}})
+
+db.products.updateOne({name: "iPhone 15"}, {$inc: {stock: 1}})
+
+- delete one document
+db.products.deleteOne({name: "iPhone 15"})
+- delete multiple docs
+db.products.deleteMany({category: "Laptop"})
+
+db.products.find({price: {$gt: 70000}})
+
+db.products.find({price: {$lt: 70000}})
+
+db.products.find({ price: { $gte: 60000, $lte: 80000 } })
+
+db.products.find({ category: { $ne: "Mobile" } })
+
+db.products.find({category: {$in: ["Laptop", "Mobile"]}})
+
+db.products.find({
+category: { $nin: ["Laptop"] }
+})
+
+db.products.find({
+$and: [
+{category: "Laptop"},
+{stock: {$gt: 0}}
+]
+})
+
+db.products.find({
+$or: [
+{ category: "Mobile" },
+{ price: { $gt: 100000 } }
+]
+})
+
+db.products.find({}, {name: 1, price: 1, _id: 0})
+
+db.products.find().sort({price: 1})
+
+db.products.find().sort({ price: -1 })
+
+db.products.find().limit(2)
+
+db.products.find().skip(2).limit(2)
